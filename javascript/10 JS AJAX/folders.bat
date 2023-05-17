@@ -1,0 +1,11 @@
+@echo off
+md "01 AJAX Intro"
+md "02 AJAX XMLHttp"
+md "03 AJAX Request"
+md "04 AJAX Response"
+md "05 AJAX XML File"
+md "06 AJAX PHP"
+md "07 AJAX ASP"
+md "08 AJAX Database"
+md "09 AJAX Applications"
+md "10 AJAX Examples"

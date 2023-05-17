@@ -1,0 +1,12 @@
+@echo off
+md "01 JS Versions"
+md "02 JS 2009 (ES5)"
+md "03 JS 2015 (ES6)"
+md "04 JS 2016"
+md "05 JS 2017"
+md "06 JS 2018"
+md "07 JS 2019"
+md "08 JS 2020"
+md "09 JS 2021 2022"
+md "10 JS IE Edge"
+md "11 JS History"

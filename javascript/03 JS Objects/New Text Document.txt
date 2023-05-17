@@ -1,0 +1,12 @@
+@echo off
+md "01 Object Definitions"
+md "02 Object Properties"
+md "03 Object Methods"
+md "04 Object Display"
+md "05 Object Accessors"
+md "06 Object Constructors"
+md "07 Object Prototypes"
+md "08 Object Iterables"
+md "09 Object Sets"
+md "10 Object Maps"
+md "11 Object Reference"

@@ -1,0 +1,12 @@
+@echo off
+md "01 JS Examples"
+md "02 JS HTML DOM"
+md "03 JS HTML Input"
+md "04 JS HTML Objects"
+md "05 JS HTML Events"
+md "06 JS Browser"
+md "07 JS Editor"
+md "08 JS Exercises"
+md "09 JS Quiz"
+md "10 JS Bootcamp"
+md "11 JS Certificate"
