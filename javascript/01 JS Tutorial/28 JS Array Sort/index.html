@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Array Sort</title>
+</head>
+
+<body>
+    <h1>My Min/Max Javascript Methods</h1>
+    <p>The highest number is <span id="demo"></span>.</p>
+    <p>The lowest number is <span id="demo1"></span>.</p>
+
+    <script>
+        const points = [40, 100, 15767, 5, 250, 1];
+        document.getElementById("demo").innerHTML = myArrayMax(points);
+        document.getElementById("demo1").innerHTML = myArrayMin(points);
+
+        function myArrayMax(arr) {
+            let len = arr.length;
+            let max = -Infinity;
+            for (let i = 0; i < len; i++) {
+                if (max < arr[i]) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+
+        function myArrayMin(arr) {
+            let len = arr.length;
+            let min = Infinity;
+            for (let i = 0; i < len; i++) {
+                if (min > arr[i]) {
+                    min = arr[i];
+                }
+            }
+            return min;
+        }
+    </script>
+</body>
+
+</html>
