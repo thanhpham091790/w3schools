@@ -28,9 +28,20 @@
             "November",
             "December"
         ];
+
+        const days = [
+            "Monday",
+            "Tuesday",
+            "Wenesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+        ];
         const d = new Date("1990-09-17");
         let month = months[d.getMonth()];
-        document.getElementById("demo").innerHTML = "Pham Hong Thanh was born in " + month;
+        let day = days[d.getDay()];
+        document.getElementById("demo").innerHTML = "Pham Hong Thanh was born in " + month + " and it is on " + day;
     </script>
 </body>
 
