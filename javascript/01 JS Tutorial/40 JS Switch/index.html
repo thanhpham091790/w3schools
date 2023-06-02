@@ -15,6 +15,9 @@
     <script>
         let day;
         switch (new Date().getDay()) {
+            default:
+                day = "Today is not weekend.";
+                break;
             case 0:
                 day = "Sunday";
                 break;
@@ -36,8 +39,7 @@
             case 6:
                 day = "Saturday";
                 break;
-            default:
-                day = "Today is not weekend.";
+
         }
 
         document.getElementById("demo").innerHTML = day;
