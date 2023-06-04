@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Set</title>
+</head>
+
+<body>
+    <h1>Using the Set Object</h1>
+    <p id="demo"></p>
+
+    <script>
+        const mySet1 = new Set();
+
+        mySet1.add(1);
+        mySet1.add(5);
+        mySet1.add(5);
+        mySet1.add('some text');
+        const o = { a: 1, b: 2 };
+        mySet1.add(o);
+
+        mySet1.add({ a: 1, b: 2 });
+
+        document.getElementById("demo").innerHTML =
+            mySet1.has(1) + "<br>" +
+            mySet1.has(3) + "<br>" +
+            mySet1.has(5) + "<br>" +
+            mySet1.has(Math.sqrt(25)) + "<br>" +
+            mySet1.has("Some text".toLocaleLowerCase()) + "<br>" +
+            mySet1.has(o) + "<br>";
+
+
+    </script>
+</body>
+
+</html>
