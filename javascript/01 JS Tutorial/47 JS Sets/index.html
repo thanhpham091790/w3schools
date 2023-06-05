@@ -37,6 +37,21 @@
             mySet1.has(o) + "<br>" +
             mySet1.size + "<br>";
 
+        for (const item of mySet1) {
+            console.log(item);
+        }
+
+        for (const item of mySet1.keys()) {
+            console.log(item);
+        }
+
+        for (const item of mySet1.values()) {
+            console.log(item);
+        }
+
+        for (const [key, value] of mySet1.entries()) {
+            console.log(value);
+        }
 
     </script>
 </body>
