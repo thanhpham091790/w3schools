@@ -58,9 +58,15 @@
 
         mySet1.add(document.body);
         for (const item of mySet1) {
-            console.log(item);
+            // console.log(item);
         }
         document.getElementById('demo').innerHTML = mySet1.has(document.querySelector('body'));
+
+        // Converting between Set and Array
+        const mySet2 = new Set([1, 2, 3, 4]);
+        console.log(mySet2.size);
+        const myArr2 = [...mySet2];
+        console.log(myArr2);
 
     </script>
 </body>
