@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Set</title>
+</head>
+
+<body>
+    <script>
+        /* Implementing basic set operations */
+
+        // Return true if setB is a subset of setA
+        function isSuperset(setA, setB) {
+            for (const elem of setB) {
+                if (!setA.has(elem)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Return a new set of elements that joined by setA and setB. 
+        // Intersection element only display one time.
+        function union(setA, setB) {
+            const _union = new Set(setA);
+            for (const elem of setB) {
+                _union.add(elem);
+            }
+            return _union;
+        }
+
+        // Return a new set of elements that belong to setA and setB
+        function intersection(setA, setB) {
+            const _intersection = new Set();
+            for (const elem of setB) {
+                if (setA.has(elem)) {
+                    _intersection.add(elem);
+                }
+            }
+            return _intersection;
+        }
+
+        // Return a new set of elements that belong to setA but not setB 
+        // Or belong to setB but not setA.
+        function symetricDifference(setA, setB) {
+            const _symetricDifference = new Set(setA);
+            for (const elem of setB) {
+                if (_symetricDifference.has(elem)) {
+                    _symetricDifference.delete(elem);
+                } else {
+                    _symetricDifference.add(elem);
+                }
+            }
+            return _symetricDifference;
+        }
+
+        // Return a new set of elements that belong to setA but not setB
+        function difference(setA, setB) {
+            const _difference = new Set(setA);
+            for (const elem of setB) {
+                _difference.delete(elem);
+            }
+            return _difference;
+        }
+
+        // Example
+        const setA = new Set([1, 2, 3, 4]);
+        const setB = new Set([2, 3]);
+        const setC = new Set([3, 4, 5, 6]);
+
+
+        console.log(isSuperset(setA, setB));
+        console.log(union(setA, setC));
+        console.log(intersection(setA, setC));
+        console.log(symetricDifference(setA, setC));
+        console.log(difference(setA, setC));
+
+        /* Relation to arrays */
+
+        const myArray = ['value1', 'value2', 'value3'];
+
+        // Use the regular Set contructor to transform an Array into a Set.
+        const mySet = new Set(myArray);
+        console.log(myArray);
+        console.log(mySet);
+
+        // Use the spread syntax to transform a Set into an Array.
+        console.log([...mySet]);
+    </script>
+</body>
+
+</html>

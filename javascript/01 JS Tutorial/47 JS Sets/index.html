@@ -69,25 +69,86 @@
         // console.log(myArr2);
 
         // Intersection and difference can be simulated via
-        const intersection = new Set([...mySet1].filter(
-            function (x) {
-                return mySet2.has(x);
-            }
-        ));
+        // const intersection = new Set([...mySet1].filter(
+        //     function (x) {
+        //         return mySet2.has(x);
+        //     }
+        // ));
 
-        const difference = new Set([...mySet1].filter(
-            function (x) {
-                return !mySet2.has(x);
-            }
-        ));
+        // const difference = new Set([...mySet1].filter(
+        //     function (x) {
+        //         return !mySet2.has(x);
+        //     }
+        // ));
         // console.log([...intersection]);
         // console.log([...difference]);
 
-        difference.forEach(
-            function (x) {
-                console.log(x);
+        // difference.forEach(
+        //     function (x) {
+        //         console.log(x);
+        //     }
+        // );
+
+        // Implementing basic set operation
+
+        function isSuperset(set, subset) {
+            for (const elem of subset) {
+                if (!set.has(elem)) {
+                    return false;
+                }
             }
-        );
+            return true;
+        }
+
+        function union(setA, setB) {
+            const _union = new Set(setA);
+            for (const elem of setB) {
+                _union.add(elem);
+            }
+            return _union;
+        }
+
+        function intersection(setA, setB) {
+            const _intersection = new Set();
+            for (const elem of setB) {
+                if (setA.has(elem)) {
+                    _intersection.add(elem);
+                }
+            }
+            return _intersection;
+        }
+
+        function symetricDifference(setA, setB) {
+            const _symetricDifference = new Set(setA);
+            for (const elem of setB) {
+                if (_symetricDifference.has(elem)) {
+                    _symetricDifference.delete(elem);
+                } else {
+                    _symetricDifference.add(elem);
+                }
+            }
+            return _symetricDifference;
+        }
+
+        function difference(setA, setB) {
+            const _difference = new Set(setA);
+            for (const elem of setB) {
+                _difference.delete(elem);
+            }
+            return _difference;
+        }
+
+        // Example
+        const setA = new Set([1, 2, 3, 4]);
+        const setB = new Set([2, 3]);
+        const setC = new Set([3, 4, 5, 6]);
+
+        document.getElementById('demo').innerHTML =
+            isSuperset(setA, setB) + "<br>" +
+            [...union(setA, setC)] + "<br>" +
+            [...intersection(setA, setC)] + "<br>" +
+            [...symetricDifference(setA, setC)] + "<br>" +
+            [...difference(setA, setC)];
 
     </script>
 </body>
