@@ -24,13 +24,18 @@
 
         mySet1.add({ a: 1, b: 2 });
 
+        mySet1.delete(5);
+
+        mySet1.add(5);
+
         document.getElementById("demo").innerHTML =
             mySet1.has(1) + "<br>" +
             mySet1.has(3) + "<br>" +
             mySet1.has(5) + "<br>" +
             mySet1.has(Math.sqrt(25)) + "<br>" +
             mySet1.has("Some text".toLocaleLowerCase()) + "<br>" +
-            mySet1.has(o) + "<br>";
+            mySet1.has(o) + "<br>" +
+            mySet1.size + "<br>";
 
 
     </script>
