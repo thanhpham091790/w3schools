@@ -54,9 +54,13 @@
         }
 
         const myArr = Array.from(mySet1);
-        console.log(myArr);
+        // console.log(myArr);
 
-
+        mySet1.add(document.body);
+        for (const item of mySet1) {
+            console.log(item);
+        }
+        document.getElementById('demo').innerHTML = mySet1.has(document.querySelector('body'));
 
     </script>
 </body>
