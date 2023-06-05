@@ -80,8 +80,14 @@
                 return !mySet2.has(x);
             }
         ));
-        console.log([...intersection]);
-        console.log([...difference]);
+        // console.log([...intersection]);
+        // console.log([...difference]);
+
+        difference.forEach(
+            function (x) {
+                console.log(x);
+            }
+        );
 
     </script>
 </body>
