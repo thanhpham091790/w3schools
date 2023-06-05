@@ -9,6 +9,12 @@
 </head>
 
 <body>
+    <p id="demo1"></p>
+    <p id="demo3"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
     <script>
         /* Implementing basic set operations */
 
@@ -90,11 +96,31 @@
         // Use the spread syntax to transform a Set into an Array.
         console.log([...mySet]);
 
-        // Use to remove duplicate elements from an array.
+
+        /* Use to remove duplicate elements from an array. */
         const numbers = [2, 3, 4, 4, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 5, 32, 3, 4, 5];
         const newSet = new Set(numbers);
         console.log(numbers);
         console.log([...newSet]);
+
+
+        /* Relation to strings */
+
+        const text = "India";
+
+        // Use the set contructor to convert a string to a Set.
+        const mySet1 = new Set(text);
+        console.log(mySet1);
+
+        // Case sensitive and duplicate omission.
+        console.log(new Set("Firefox"));
+        console.log(new Set("firefox"));
+
+        /* Use a set to ensure the uniqueness of a list of values */
+        const arrayID = Array.from(document.querySelectorAll("[id]")).map((e) => e.id);
+        const setID = new Set(arrayID);
+        console.log(arrayID);
+        console.log(setID);
     </script>
 </body>
 
