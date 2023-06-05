@@ -64,9 +64,24 @@
 
         // Converting between Set and Array
         const mySet2 = new Set([1, 2, 3, 4]);
-        console.log(mySet2.size);
+        // console.log(mySet2.size);
         const myArr2 = [...mySet2];
-        console.log(myArr2);
+        // console.log(myArr2);
+
+        // Intersection and difference can be simulated via
+        const intersection = new Set([...mySet1].filter(
+            function (x) {
+                return mySet2.has(x);
+            }
+        ));
+
+        const difference = new Set([...mySet1].filter(
+            function (x) {
+                return !mySet2.has(x);
+            }
+        ));
+        console.log([...intersection]);
+        console.log([...difference]);
 
     </script>
 </body>
