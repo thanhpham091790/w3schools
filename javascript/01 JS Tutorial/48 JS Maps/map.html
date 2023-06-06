@@ -113,6 +113,33 @@
             console.log(Array.from(myMap.values())); // ["value1", "value2"]
         }
 
+        /* Cloning and mergin Maps */
+        {
+            const original = new Map([[1, "one"]]);
+            const clone = new Map(original);
+
+            console.log(clone.get(1)); // "one"
+            console.log(original === clone); // false
+
+            const first = new Map([
+                [1, "one"],
+                [2, "two"],
+                [3, "three"]
+            ]);
+
+            const second = new Map([
+                [1, "uno"],
+                [2, "dos"]
+            ]);
+
+            // Merge two maps. The last repeated key wins.
+            // Spread syntax essentially converts a Map to an Array
+            const merged = new Map([...first, ...second, [3, "Thanh"]]);
+            console.log(first);
+            console.log(second);
+            console.log(`${merged.get(1)} - ${merged.get(2)} - ${merged.get(3)}`);
+        }
+
     </script>
 </body>
 
