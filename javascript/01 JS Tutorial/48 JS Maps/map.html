@@ -11,27 +11,40 @@
 <body>
     <script>
         /* Using the Map object */
-        const myMap = new Map();
+        {
+            const myMap = new Map();
 
-        const keyString = 'a string';
-        const keyObj = {};
-        const keyFunc = function () { };
+            const keyString = 'a string';
+            const keyObj = {};
+            const keyFunc = function () { };
 
-        // Setting the values
-        myMap.set(keyString, 'value associated with "a string"');
-        myMap.set(keyObj, 'value associated with keyObj');
-        myMap.set(keyFunc, 'value associated with keyFunc');
+            // Setting the values
+            myMap.set(keyString, 'value associated with "a string"');
+            myMap.set(keyObj, 'value associated with keyObj');
+            myMap.set(keyFunc, 'value associated with keyFunc');
 
-        console.log(myMap.size);
+            console.log(myMap.size);
 
-        // Getting the values
-        console.log(myMap.get(keyString)); // 'value associated with "a string"'
-        console.log(myMap.get(keyObj)); // 'value associated with keyObj'
-        console.log(myMap.get(keyFunc)); // 'value associated with keyFunc'
+            // Getting the values
+            console.log(myMap.get(keyString)); // 'value associated with "a string"'
+            console.log(myMap.get(keyObj)); // 'value associated with keyObj'
+            console.log(myMap.get(keyFunc)); // 'value associated with keyFunc'
 
-        console.log(myMap.get('a string')); // 'value associated with "a string"'
-        console.log(myMap.get({})); // undefined, because keyObj !== {}
-        console.log(myMap.get(function () { })); // undefined, because keyFunc !== function () {}
+            console.log(myMap.get('a string')); // 'value associated with "a string"'
+            console.log(myMap.get({})); // undefined, because keyObj !== {}
+            console.log(myMap.get(function () { })); // undefined, because keyFunc !== function () {}
+        }
+
+        /* Using NaN as Map keys */
+        {
+            const myMap = new Map();
+            myMap.set(NaN, "not a number");
+            console.log(myMap.get(NaN)); // "not a number"
+
+            const otherNaN = Number("foo");
+            console.log(myMap.get(otherNaN)); // "not a number"
+        }
+
     </script>
 </body>
 
