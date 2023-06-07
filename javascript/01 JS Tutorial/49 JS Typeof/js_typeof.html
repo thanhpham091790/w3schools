@@ -63,6 +63,15 @@
         console.log(typeof function () { } === "function");
         console.log(typeof Math.random === "function");
 
+        /* Using new operator */
+        const str = new String("String");
+        const num = new Number(100);
+        console.log(typeof str);
+        console.log(typeof num);
+
+        const func = new Function();
+        console.log(typeof func);
+
 
     </script>
 </body>
