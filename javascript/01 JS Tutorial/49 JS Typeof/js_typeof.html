@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <h2>Javascript Typeof</h2>
+    <p id="demo"></p>
+
     <script>
         /* Basic usage */
 
@@ -78,7 +81,56 @@
         console.log(typeof someData + "Wisen");
         console.log(typeof (someData + "Wisen"));
 
+        /* Custom method that gets a more specific type */
+        function type(value) {
+            if (value === null) {
+                return null;
+            }
 
+            const baseType = typeof value;
+
+            // Primitive types
+            if (!["object", "function"].includes(baseType)) {
+                return baseType;
+            }
+
+            // Symbol.toStringTag often specifies the "display name" of the
+            // object's class. It's used in Object.prototype.toString().
+            const tag = value[Symbol.toStringTag];
+            if (typeof tag === "string") {
+                return tag;
+            }
+
+            // If it's a function whose source code starts with the "class" keyword
+            if (baseType === "function" && Function.prototype.toString.call(value).startsWith("class")) {
+                return "class";
+            }
+
+            // The name of the constructor; for example `Array`, `GeneratorFunction`
+            // `Number`, `String`, `Boolean`, or `MyCustomClass`
+            const className = value.constructor.name;
+            if (typeof className === "string" && className !== "") {
+                return className;
+            }
+
+            // At this point there's no robust way to get the type of value,
+            // so we use the base implementation.
+            return baseType;
+        }
+
+        {
+            const myArr = ["thanh", "thuy"];
+            const myFunc = type;
+            const myStr = "Moi Anh Ve Que Em";
+            const myObj = { thanh: 33, thuy: 30 };
+            const myClass = class Thanh { };
+
+            console.log(type(myArr));
+            console.log(type(myFunc));
+            console.log(type(myStr));
+            console.log(type(myObj));
+            console.log(type(myClass));
+        }
     </script>
 </body>
 
