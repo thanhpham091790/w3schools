@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Typeof</title>
+</head>
+
+<body>
+    <script>
+        /* Basic usage */
+
+        // Numbers
+        console.log(typeof 37 === "number");
+        console.log(typeof 3.14 === "number");
+        console.log(typeof 42 === "number");
+        console.log(typeof Math.LN2 === "number");
+        console.log(typeof Infinity === "number");
+        console.log(typeof NaN === "number");
+        console.log(typeof Number("1") === "number");
+        console.log(typeof Number("thanh") === "number");
+        console.log(typeof 42n === "bigint");
+
+        // Strings
+        console.log(typeof "" === "string");
+        console.log(typeof "thanh" === "string");
+        console.log(typeof `template literal` === "string");
+        console.log(typeof "1" === "string");
+        console.log(typeof typeof 1 === "string");
+        console.log(typeof String(1) === "string");
+
+        // Booleans
+        console.log(typeof true === "boolean");
+        console.log(typeof false === "boolean");
+        console.log(typeof Boolean(1) === "boolean");
+        console.log(typeof !!1 === "boolean");
+
+        // Symbols
+        console.log(typeof Symbol() === "symbol");
+        console.log(typeof Symbol("thanh") === "symbol");
+        console.log(typeof Symbol.iterator === "symbol");
+
+        // Undefined
+        console.log(typeof undefined === "undefined");
+        console.log(typeof declaredButUndefinedVariable === "undefined");
+        console.log(typeof undeclaredVariable === "undefined");
+
+        // Objects
+        console.log(typeof { name: "thanh" } === "object");
+        console.log(typeof [1, 2, 3] === "object");
+        console.log(typeof new Date() === "object");
+        console.log(typeof /regex/ === "object");
+        console.log(typeof new Boolean(true) === "object");
+        console.log(typeof new Number(1) === "object");
+        console.log(typeof new String("thanh") === "object");
+        console.log(typeof null === "object");
+
+        // Functions
+        console.log(typeof function () { } === "function");
+        console.log(typeof class Thanh { } === "function");
+        console.log(typeof function () { } === "function");
+        console.log(typeof Math.random === "function");
+
+
+    </script>
+</body>
+
+</html>
