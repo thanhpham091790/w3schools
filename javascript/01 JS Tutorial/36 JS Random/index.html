@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js_random.js" defer></script>
     <title>JS Random</title>
 </head>
 
@@ -12,14 +13,8 @@
     <h2>Javascript Math.random()</h2>
     <p>Every time you click the button, getRndInteger(min, max) returns a random number between 0 and 9 (both included):
     </p>
-    <button onclick="document.getElementById('demo').innerHTML = getRndInteger(0,10)">Click Me!</button>
+    <button onclick="document.getElementById('demo').innerHTML = getRandomInteger(0,10)">Click Me!</button>
     <p id="demo"></p>
-
-    <script>
-        function getRndInteger(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-    </script>
 </body>
 
 </html>
