@@ -16,8 +16,9 @@
 
     <script>
         const pattern = /e/;
-        let check = pattern.test("The best things in life are free!");
-        document.getElementById("demo").innerHTML = check;
+        let check = pattern.exec("The best things in life are free!");
+        console.log(check);
+        document.getElementById("demo").innerHTML = `The ${check[0]} is found at position number ${check.index} of the string : ${check.input}`;
     </script>
 </body>
 
