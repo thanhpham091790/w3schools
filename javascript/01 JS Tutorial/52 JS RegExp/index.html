@@ -16,8 +16,9 @@
 
     <script>
         let text = "Visit W3Schools!";
-        let n = text.search("W3Schools");
-        document.getElementById("demo").innerHTML = n;
+        let n = text.search(/w3schools/i);
+        let result = text.replace(/w3schools/i, "Thanh");
+        document.getElementById("demo").innerHTML = n + " - " + result;
     </script>
 </body>
 
