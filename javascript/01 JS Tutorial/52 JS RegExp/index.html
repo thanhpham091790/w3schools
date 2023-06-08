@@ -15,10 +15,9 @@
     <p id="demo"></p>
 
     <script>
-        let text = "Visit W3Schools!";
-        let n = text.search(/w3schools/i);
-        let result = text.replace(/w3schools/i, "Thanh");
-        document.getElementById("demo").innerHTML = n + " - " + result;
+        const pattern = /e/;
+        let check = pattern.test("The best things in life are free!");
+        document.getElementById("demo").innerHTML = check;
     </script>
 </body>
 
