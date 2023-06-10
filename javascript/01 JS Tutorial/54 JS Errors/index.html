@@ -16,6 +16,14 @@
     <p id="p01"></p>
 
     <script>
+        let num = 1;
+        try {
+            num = y + 1;
+            num.toPrecision(500);
+        } catch (e) {
+            document.getElementById("p01").innerHTML = e.name + " - " + e.message;
+        }
+
         function myFunction() {
             const message = document.getElementById("p01");
             message.innerHTML = "";
