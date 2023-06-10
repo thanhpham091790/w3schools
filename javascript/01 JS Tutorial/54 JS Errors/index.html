@@ -36,6 +36,8 @@
                 }
             } catch (e) {
                 message.innerHTML = "Input is " + e;
+            } finally {
+                document.getElementById("demo").value = "";
             }
         }
     </script>
