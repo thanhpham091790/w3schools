@@ -56,3 +56,41 @@ bar.call(undefined);
     const o = { a: 37, f, g, h };
     console.log(o.a, o.f(), o.g(), o.h());
 }
+
+/* This in arrow functions */
+{
+    const obj = {
+        getThisGetter() {
+            const getter = () => this;
+            return getter;
+        }
+    };
+
+    const fn = obj.getThisGetter();
+
+    console.log(fn() === obj);
+}
+
+/* This with a getter or setter */
+{
+    function sum() {
+        return this.a + this.b + this.c;
+    }
+
+    const o = {
+        a: 1,
+        b: 2,
+        c: 3,
+        get average() {
+            return (this.a + this.b + this.c) / 3;
+        }
+    };
+
+    Object.defineProperty(o, "sum", {
+        get: sum,
+        enumerable: true,
+        configurable: true
+    });
+
+    console.log(o.average, o.sum);
+}
