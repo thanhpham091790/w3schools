@@ -94,3 +94,24 @@ bar.call(undefined);
 
     console.log(o.average, o.sum);
 }
+
+/* As a DOM event handler */
+{
+    // When called as a listener, turns the related element blue
+    function bluify(e) {
+        // Alway true
+        console.log(this === e.currentTarget);
+        // true when currentTarget and target are the same object
+        console.log(this === e.target);
+        this.style.backgroundColor = "#A5D9F3";
+    }
+
+    // Get a list of every element in the document
+    const elements = document.getElementsByTagName("*");
+
+    // Add bluify as a click listener so when the 
+    // element is clicked on, it turns blue
+    for (const element of elements) {
+        element.addEventListener("click", bluify, false);
+    }
+}
