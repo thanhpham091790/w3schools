@@ -13,3 +13,5 @@ function whatsThis() {
 }
 
 console.log(whatsThis()); // 'Global'; this in function isn't set, so it defaults to the global/window objecdt in non-strict mode.
+obj.whatsThis = whatsThis;
+console.log(obj.whatsThis()); // 'Custom'; this in the function is set to obj
