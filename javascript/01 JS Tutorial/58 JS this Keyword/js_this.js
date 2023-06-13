@@ -26,3 +26,6 @@ const o = { a: 1, b: 3 };
 // parameters are used as arguments in the function call
 console.log(add.call(o, 5, 7));
 
+// The first parameter is the object to use as 'this', the second is an 
+// array whose members are used as arguments in the function call
+console.log(add.apply(o, [10, 20]));
