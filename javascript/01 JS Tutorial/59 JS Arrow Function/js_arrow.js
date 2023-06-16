@@ -1,43 +1,66 @@
 
 /* Using arrow functions */
-// An empty arrow function returns undefined
-const empty = () => { };
+{
 
-(() => "football")();
-// Returns "football"
-// (this is an immediately invoked function expression)
+    // An empty arrow function returns undefined
+    const empty = () => { };
 
-const simple = (a) => (a > 15 ? 15 : a);
-console.log(simple(16), simple(11));
+    (() => "football")();
+    // Returns "football"
+    // (this is an immediately invoked function expression)
 
-const max = (a, b) => (a > b ? a : b);
-console.log(max(17, 23));
+    const simple = (a) => (a > 15 ? 15 : a);
+    console.log(simple(16), simple(11));
 
-// Easy array filtering, mapping, etc.
-const arr = [5, 6, 13, 0, 1, 18, 23];
+    const max = (a, b) => (a > b ? a : b);
+    console.log(max(17, 23));
 
-const sum = arr.reduce((a, b) => a + b);
-console.log(sum);
+    // Easy array filtering, mapping, etc.
+    const arr = [5, 6, 13, 0, 1, 18, 23];
 
-const even = arr.filter((a) => a % 2 === 0);
-console.log(even);
+    const sum = arr.reduce((a, b) => a + b);
+    console.log(sum);
 
-const double = arr.map((a) => a * 2);
-console.log(double);
+    const even = arr.filter((a) => a % 2 === 0);
+    console.log(even);
 
-// More concise promise chains
-// promise
-//     .then((a) => {
-//         // ...
-//     })
-//     .then((a) => {
-//         // ...
-//     });
+    const double = arr.map((a) => a * 2);
+    console.log(double);
 
-// Parameterless arrow functions that are visually easier to parse
-setTimeout(() => {
-    console.log("I happen sooner");
+    // More concise promise chains
+    // promise
+    //     .then((a) => {
+    //         // ...
+    //     })
+    //     .then((a) => {
+    //         // ...
+    //     });
+
+    // Parameterless arrow functions that are visually easier to parse
     setTimeout(() => {
-        console.log("I happen later");
+        console.log("I happen sooner");
+        setTimeout(() => {
+            console.log("I happen later");
+        }, 1);
     }, 1);
-}, 1);
+}
+
+/* Using call, bind, and apply */
+{
+    const obj = {
+        num: 100
+    }
+
+    // Setting 'num' on globalThis to show how it is not used.
+    globalThis.num = 42;
+
+    // A simple traditional function to operate on 'this'
+    const add = function (a, b, c) {
+        return this.num + a + b + c;
+    }
+
+    console.log(add.call(obj, 1, 2, 3));
+    console.log(add.apply(obj, [1, 2, 3]));
+    const boundAdd = add.bind(obj);
+    console.log(boundAdd(1, 2, 3));
+}
