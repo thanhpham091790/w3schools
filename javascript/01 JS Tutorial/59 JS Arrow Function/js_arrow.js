@@ -47,20 +47,61 @@
 
 /* Using call, bind, and apply */
 {
-    const obj = {
-        num: 100
+    {
+        const obj = {
+            num: 100
+        }
+
+        // Setting 'num' on globalThis to show how it is not used.
+        globalThis.num = 42;
+
+        // A simple traditional function to operate on 'this'
+        const add = function (a, b, c) {
+            return this.num + a + b + c;
+        }
+
+        console.log(add.call(obj, 1, 2, 3));
+        console.log(add.apply(obj, [1, 2, 3]));
+        const boundAdd = add.bind(obj);
+        console.log(boundAdd(1, 2, 3));
     }
+    {
+        const obj = {
+            num: 100
+        };
+        // Setting 'num' on globalThis to show how it gets pick up.
+        globalThis.num = 42;
+        // Arrow function
+        const add = (a, b, c) => this.num + a + b + c;
 
-    // Setting 'num' on globalThis to show how it is not used.
-    globalThis.num = 42;
-
-    // A simple traditional function to operate on 'this'
-    const add = function (a, b, c) {
-        return this.num + a + b + c;
+        console.log(add.call(obj, 1, 2, 3));
+        console.log(add.apply(obj, [1, 2, 3]));
+        const boundAdd = add.bind(obj);
+        console.log(boundAdd(1, 2, 3));
     }
-
-    console.log(add.call(obj, 1, 2, 3));
-    console.log(add.apply(obj, [1, 2, 3]));
-    const boundAdd = add.bind(obj);
-    console.log(boundAdd(1, 2, 3));
+    {
+        const obj = {
+            count: 10,
+            doSomethingLater() {
+                setTimeout(function () {
+                    // The function executes on the window scope
+                    this.count++;
+                    console.log(this.count);
+                }, 300);
+            }
+        };
+        obj.doSomethingLater();
+    }
+    {
+        const obj = {
+            count: 10,
+            doSomethingLater() {
+                setTimeout(() => {
+                    this.count++;
+                    console.log(this.count);
+                }, 300);
+            }
+        };
+        obj.doSomethingLater();
+    }
 }
