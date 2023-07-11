@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Classes</title>
+    <script src="js_classes.js" defer></script>
+</head>
+
+
+<body>
+    <h2>Javascript Classes</h2>
+    <p id="demo"></p>
+    <script>
+        class Car {
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+            }
+            age() {
+                const date = new Date();
+                return date.getFullYear() - this.year;
+            }
+        }
+
+        const myCar = new Car('Toyota', 2017);
+        document.getElementById("demo").innerHTML = "My car is " + myCar.age() + " years old.";
+    </script>
+</body>
+
+</html>
