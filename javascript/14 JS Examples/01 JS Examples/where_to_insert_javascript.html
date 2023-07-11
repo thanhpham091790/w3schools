@@ -17,6 +17,7 @@
     <h2>Demo Javascript in Head</h2>
     <p id="demo1">A Paragraph.</p>
     <button type="button" onclick="myFunction1()">Try it</button>
+
     <!-- Javascript in <body> -->
     <h2>Demo Javascript in Body</h2>
     <p id="demo2">A Paragraph.</p>
@@ -26,6 +27,7 @@
             document.getElementById("demo2").innerHTML = "Paragraph changed from body.";
         }
     </script>
+
     <!-- Javascript in an external file -->
     <h2>Demo External Javascript</h2>
     <p id="demo3">A Paragraph.</p>
@@ -33,7 +35,15 @@
     <p>This example links to "myScript.js"</p>
     <p>(myFunction3 is store in "myScript.js")</p>
     <script src="myScript.js"></script>
+
     <!-- Javascript in an external url -->
+    <h2>External Javascript</h2>
+    <p id="demo">A Paragraph.</p>
+    <button onclick="myFunction()">Click me</button>
+    <p>This example uses a full web URL to link to "myScript.js".</p>
+    <p>(myFunction is stored in "myScript.js")</p>
+    <script src="https://www.w3schools.com/js/myScript.js"></script>
+
     <!-- Javascript in an external folder -->
 
 </body>
