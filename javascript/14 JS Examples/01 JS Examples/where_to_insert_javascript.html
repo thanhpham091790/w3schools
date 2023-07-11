@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Where to insert Javascript</title>
-    <script>
+    <!-- <script>
         function myFunction1() {
-            document.getElementById("demo1").innerHTML = "Paragraph changed.";
+            document.getElementById("demo1").innerHTML = "Paragraph changed from head.";
         }
-    </script>
+    </script> -->
 </head>
 
 <body>
@@ -22,7 +22,11 @@
     <!-- Javascript in an external url -->
     <!-- Javascript in an external folder -->
 
-
+    <script>
+        function myFunction1() {
+            document.getElementById("demo1").innerHTML = "Paragraph changed from body.";
+        }
+    </script>
 </body>
 
 </html>
