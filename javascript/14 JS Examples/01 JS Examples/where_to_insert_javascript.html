@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Where to insert Javascript</title>
-    <!-- <script>
+    <script>
         function myFunction1() {
             document.getElementById("demo1").innerHTML = "Paragraph changed from head.";
         }
-    </script> -->
+    </script>
 </head>
 
 <body>
@@ -18,15 +18,24 @@
     <p id="demo1">A Paragraph.</p>
     <button type="button" onclick="myFunction1()">Try it</button>
     <!-- Javascript in <body> -->
+    <h2>Demo Javascript in Body</h2>
+    <p id="demo2">A Paragraph.</p>
+    <button type="button" onclick="myFunction2()">Try it</button>
+    <script>
+        function myFunction2() {
+            document.getElementById("demo2").innerHTML = "Paragraph changed from body.";
+        }
+    </script>
     <!-- Javascript in an external file -->
+    <h2>Demo External Javascript</h2>
+    <p id="demo3">A Paragraph.</p>
+    <button type="button" onclick="myFunction3()">Try it</button>
+    <p>This example links to "myScript.js"</p>
+    <p>(myFunction3 is store in "myScript.js")</p>
+    <script src="myScript.js"></script>
     <!-- Javascript in an external url -->
     <!-- Javascript in an external folder -->
 
-    <script>
-        function myFunction1() {
-            document.getElementById("demo1").innerHTML = "Paragraph changed from body.";
-        }
-    </script>
 </body>
 
 </html>
