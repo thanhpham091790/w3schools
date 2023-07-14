@@ -13,12 +13,13 @@
     <p>My first paragraph.</p>
     <p>Never call document.write after the document has finish loading. It will overwrite the whole document.</p>
     <script>
-        setTimeout(function () {
-            document.write(5 + 6);
-        }, 3000);
-
+        document.write(5 + 6);
     </script>
     <!-- Writing into an HTML element -->
+    <p id="demo1"></p>
+    <script>
+        document.getElementById("demo1").innerHTML = 10 + 7;
+    </script>
     <!-- Writing into an window alert box -->
     <!-- Writing into the browser console -->
 </body>
