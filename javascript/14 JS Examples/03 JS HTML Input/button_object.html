@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Object</title>
+</head>
+
+<body>
+    <!-- Disable a button -->
+    <form>
+        <input type="button" id="btn01" value="OK">
+    </form>
+    <p>Click the "Disable" button to disable the "OK" button:</p>
+    <button onclick="disableElement(true)">Disable</button>
+    <button onclick="disableElement(false)">Active</button>
+    <script>
+        function disableElement(param) {
+            let ele = document.getElementById("btn01");
+            param == true ? ele.disabled = true : ele.disabled = false;
+        }
+    </script>
+
+    <!-- Find the name of a button  -->
+    <!-- Find the type of a button  -->
+    <!-- Find the value of a button  -->
+    <!-- Find the text displayed on a button  -->
+    <!-- Find the id of the form a button belong to  -->
+
+</body>
+
+</html>
