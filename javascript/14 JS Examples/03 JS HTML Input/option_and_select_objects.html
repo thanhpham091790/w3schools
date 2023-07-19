@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option and Select Objects</title>
+</head>
+
+<body>
+    <form id="myForm">
+        <select id="mySelect">
+            <option>Apple</option>
+            <option>Pear</option>
+            <option>Banana</option>
+            <option>Orange</option>
+        </select>
+        <br><br>
+        <input type="button" onclick="disable()" value="Disable list">
+        <input type="button" onclick="enable()" value="Enable list">
+    </form>
+    <p id="demo"></p>
+    <button onclick="myFunction()">Try it</button>
+    <button onclick="myFunction1()">Multiple Choices</button>
+    <script>
+        var select = document.getElementById("mySelect");
+        function disable() {
+            select.disabled = true;
+        }
+        function enable() {
+            select.disabled = false;
+        }
+        function myFunction1() {
+            select.multiple = true;
+        }
+        function myFunction() {
+            var options = select.options;
+            var i;
+            var text = "";
+            for (i = 0; i < options.length; i++) {
+                if (options[i].value == "Apple")
+                    select.remove(i);
+                if (options[i].value == "Orange")
+                    select.selectedIndex = i;
+                text += options[i].value + "<br>";
+            }
+            text += "--------------" + "<br>"
+            text += select.form.id + "<br>" +
+                select.length + "<br>" +
+                select.value + "<br>";
+            document.getElementById("demo").innerHTML = text;
+        }
+    </script>
+</body>
+
+</html>
