@@ -9,8 +9,8 @@
 
 <body>
     <!-- Disable a button -->
-    <form>
-        <input type="button" name="subject" id="btn01" value="OK">
+    <form id="form01">
+        <button type="button" name="subject" id="btn01" value="OK">HTML</button>
     </form>
     <p>Click the "Disable" button to disable the "OK" button:</p>
     <button onclick="disableElement(true)">Disable</button>
@@ -27,8 +27,11 @@
     <button onclick="myFunction1()">Try it</button>
     <script>
         function myFunction1() {
-            let name = document.getElementById("btn01").name;
-            document.getElementById("demo1").innerHTML = name;
+            let btn = document.getElementById("btn01");
+            let btnInfo = btn.name + " - " +
+                btn.type + " - " + btn.value + " - " +
+                btn.innerHTML + " - " + btn.form.id;
+            document.getElementById("demo1").innerHTML = btnInfo;
         }
     </script>
     <!-- Find the type of a button  -->
