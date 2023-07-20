@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anchor Object</title>
+</head>
+
+<body>
+    <p><a id="myAnchor" type="text/html" target="_self" rel="nofollow" hreflang="en-us"
+            href="https://www.w3schools.com/">W3Schools</a>
+    </p>
+
+    <p>Click the button to display the value of the href attribute of the link above.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            var ele = document.getElementById("myAnchor");
+            var text = "";
+            text += ele.href + "<br>";
+            text += ele.hreflang + "<br>";
+            text += ele.id + "<br>";
+            text += ele.rel + "<br>";
+            text += ele.target + "<br>";
+            text += ele.type + "<br>";
+            document.getElementById("demo").innerHTML = text;
+        }
+    </script>
+
+</body>
+
+</html>
