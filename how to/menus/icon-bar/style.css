@@ -1,3 +1,4 @@
+/* Vertical icon bar */
 .icon-bar-vertical {
     width: 100px;
     background-color: #555;
@@ -17,5 +18,31 @@
 }
 
 .icon-bar-vertical a.active {
+    background-color: #04AA6D;
+}
+
+/* Horizontal icon bar */
+
+.icon-bar-horizontal {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+}
+
+.icon-bar-horizontal a {
+    float: left;
+    text-align: center;
+    width: 20%;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 36px;
+}
+
+.icon-bar-horizontal a:hover {
+    background-color: #000;
+}
+
+.icon-bar-horizontal a.active {
     background-color: #04AA6D;
 }
