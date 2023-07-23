@@ -1,4 +1,14 @@
-function openTab(event, tabId) {
+// Declare variable
+var i, tab, tabId, tabLinks, tabChildren;
+
+// Add event handler function to each tablink
+tabLinks = document.getElementsByClassName("tablinks");
+for (i = 0; i < tabLinks.length; i++) {
+    tabId = tabLinks[i].dataset.id;
+    tabLinks[i].addEventListener("click", openTabContent);
+}
+
+function openTabContent(event) {
     // Declare all variables
     var i, tabcontent, tablinks;
 
@@ -15,6 +25,16 @@ function openTab(event, tabId) {
     }
 
     // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(tabId).style.display = "block";
-    event.currentTarget.classList.add("active");
+    document.getElementById(event.target.dataset.id).style.display = "block";
+    event.target.classList.add("active");
+}
+
+// Find the default open tab, and click on it
+tab = document.getElementsByClassName("tab");
+tabChildren = tab.item(0).children;
+console.log(tabChildren);
+for (i = 0; i < tabChildren.length; i++) {
+    if (tabChildren[i].dataset.default === "true") {
+        tabChildren[i].click();
+    }
 }
