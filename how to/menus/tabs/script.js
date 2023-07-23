@@ -1,11 +1,22 @@
 // Declare variable
-var i, tab, tabId, tabLinks, tabChildren;
+var i, tab, tabId, tabLinks, tabChildren, closeBtn;
 
-// Add event handler function to each tablink
+// Add event handler function when click on each close button
+closeBtn = document.getElementsByClassName("topright");
+for (i = 0; i < closeBtn.length; i++) {
+    closeBtn[i].addEventListener("click", closeTabContent);
+}
+
+// Add event handler function when click on each tablink
 tabLinks = document.getElementsByClassName("tablinks");
 for (i = 0; i < tabLinks.length; i++) {
     tabId = tabLinks[i].dataset.id;
     tabLinks[i].addEventListener("click", openTabContent);
+}
+
+function closeTabContent(event) {
+    var parentId = event.target.parentElement.id;
+    document.getElementById(parentId).style.display = "none";
 }
 
 function openTabContent(event) {
@@ -32,7 +43,6 @@ function openTabContent(event) {
 // Find the default open tab, and click on it
 tab = document.getElementsByClassName("tab");
 tabChildren = tab.item(0).children;
-console.log(tabChildren);
 for (i = 0; i < tabChildren.length; i++) {
     if (tabChildren[i].dataset.default === "true") {
         tabChildren[i].click();
