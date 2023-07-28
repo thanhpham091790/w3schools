@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 /* The side navigation menu */
 .sidenav {
     height: 100%;
@@ -5,13 +9,13 @@
     position: fixed;
     z-index: 1;
     top: 0;
-    /* left: 0; */
-    right: 0;
+    left: 0;
+    /* right: 0; */
     background-color: #111;
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
-    display: none;
+    /* display: none; */
 }
 
 /* The navigation menu links */
@@ -41,6 +45,7 @@
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: margin-left .5s;
+    margin-left: 250px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
