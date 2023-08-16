@@ -1,0 +1,58 @@
+.dropbtn {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    background-color: #04AA6D;
+    padding: 16px;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+#myInput {
+    box-sizing: border-box;
+    background-image: url("https://www.w3schools.com/howto/searchicon.png");
+    background-repeat: no-repeat;
+    background-position: 14px 12px;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {
+    outline: 3px solid #ddd;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    display: none;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    display: block;
+    color: black;
+    padding: 12px 16px;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
