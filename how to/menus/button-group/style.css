@@ -8,8 +8,19 @@
     margin: 14px 0px;
 }
 
+#vertical-btn-group button {
+    float: none;
+    display: block;
+    width: 20%;
+    margin: 0;
+}
+
 .btn-group button:not(:last-child) {
     border-right: none;
+}
+
+#vertical-btn-group button:not(:last-child) {
+    border-bottom: none;
 }
 
 /* Clear float */
