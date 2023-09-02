@@ -1,0 +1,19 @@
+/* Pagination links */
+.pagination a {
+    text-decoration: none;
+    padding: 8px 16px;
+    color: black;
+    float: left;
+    transition: background-color 0.3s;
+}
+
+/* Style the active link */
+.pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+/* Add a grey background color on mouse over */
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
