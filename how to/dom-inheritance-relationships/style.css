@@ -1,0 +1,18 @@
+li {
+    list-style-type: none;
+    border-left: 1px solid #ccc;
+    margin: 5px;
+    padding: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+span.marker:hover {
+    cursor: pointer;
+}
+
+li[data-collapsed='true']>ul {
+    display: none;
+}
